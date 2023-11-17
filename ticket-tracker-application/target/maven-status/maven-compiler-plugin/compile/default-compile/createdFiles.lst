@@ -1,0 +1,7 @@
+com\glca\app\TicketTrackerAppApplication.class
+com\glca\app\controller\TicketController.class
+com\glca\app\model\Ticket.class
+com\glca\app\service\TicketServiceImple.class
+com\glca\app\ServletInitializer.class
+com\glca\app\repo\ITicketRepo.class
+com\glca\app\service\ITicketService.class

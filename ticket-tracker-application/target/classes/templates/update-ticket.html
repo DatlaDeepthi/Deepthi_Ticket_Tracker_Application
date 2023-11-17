@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Ticket Tracker Application</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+	<div class="container">
+		<h1 class="text-center bg-burlywood text-mediumvioletred">Edit Ticket</h1>
+		<form th:action="@{/updateTicket}" th:object="${tickets}" method="post">
+			<div class="form-group">
+				<label for="id">#</label>
+				<input type="text" name="id" id="id" th:field="*{id}" readonly class="form-control">
+			</div>
+
+			<div class="form-group">
+				<label for="title">TicketTitle</label>
+				<input type="text" id="title" name="title" th:field="*{title}" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<label for="ticketShortDescription">TicketShortDescription</label>
+				<input type="text" id="ticketShortDescription" name="ticketShortDescription"
+					th:field="*{ticketShortDescription}" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="ticketCreatedOn">TicketCreatedOn</label>
+				<input type="text" id="ticketCreatedOn" name="ticketCreatedOn" th:field="*{ticketCreatedOn}"
+					class="form-control">
+			</div>
+			<button type="submit" class="btn btn-primary">Update Ticket</button>
+			
+		</form>
+
+	</div>
+</body>
+
+</html>

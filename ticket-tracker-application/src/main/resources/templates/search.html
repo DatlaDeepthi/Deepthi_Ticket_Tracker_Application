@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+</head>
+
+<body>
+	<div class="container">
+		<h1>List Of Tickets</h1>
+		<!-- Add a button -->
+		<a th:href="@{/Tickets}" class="btn btn-success btn-sm ml-3 mr-1">
+			Tickets
+		</a>
+
+
+
+		<form class="form-inline" th:action="@{/search}" method="get">
+			<div class="form-group">
+				<input type="text" class="form-control" name="name" placeholder="Search by Name">
+			</div>
+			<button type="submit" class="btn btn-primary">Search</button>
+		</form>
+
+
+		<table class="table table-bordered table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th>ID</th>
+					<th>Ticket Title</th>
+					<th>Short Description</th>
+					<th>Created On</th>
+					<th>Action</th>
+
+
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="ticket : ${tickets}">
+
+					<td th:text="${ticket.id}" />
+					<td th:text="${ticket.title}" />
+					<td th:text="${ticket.ticketShortDescription}" />
+					<td th:text="${ticket.ticketCreatedOn}" />
+
+
+					<td>
+						<div class="row">
+
+							<div class="col-small">
+								<!-- Add "update" button/link -->
+								<form action="#" th:action="@{/showUpdateForm}" method="POST">
+
+									<input type="hidden" name="id" th:value="${ticket.id}" />
+									<button type="submit" class="btn btn-danger btn-sm ml-3 mr-1">Edit</button>
+
+								</form>
+							</div>
+
+							<div class="col-small">
+								<!-- Add "delete" button/link -->
+								<form action="#" th:action="@{/deleteTicket}" method="POST">
+
+									<input type="hidden" name="id" th:value="${ticket.id}" />
+									<button type="submit" class="btn btn-info btn-sm ml-3 mr-1">Delete</button>
+
+
+								</form>
+							</div>
+							<div class="col-small">
+								<!-- Add "delete" button/link -->
+								<form action="#" th:action="@{/viewTicket}" method="POST">
+
+									<input type="hidden" name="id" th:value="${ticket.id}" />
+									<button type="submit" class="btn btn-danger btn-sm ml-3 mr-1">View</button>
+
+
+								</form>
+							</div>
+						</div>
+					</td>
+
+
+				</tr>
+			</tbody>
+		</table>
+		<a class="btn btn-primary" th:href="@{/}">Go back</a>
+</body>
+
+</html>

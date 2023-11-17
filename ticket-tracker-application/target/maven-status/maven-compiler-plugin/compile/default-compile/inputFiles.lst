@@ -1,0 +1,7 @@
+D:\SpringBoot-WorkSpace\ticket-tracker-app\src\main\java\com\glca\app\TicketTrackerAppApplication.java
+D:\SpringBoot-WorkSpace\ticket-tracker-app\src\main\java\com\glca\app\service\ITicketService.java
+D:\SpringBoot-WorkSpace\ticket-tracker-app\src\main\java\com\glca\app\model\Ticket.java
+D:\SpringBoot-WorkSpace\ticket-tracker-app\src\main\java\com\glca\app\controller\TicketController.java
+D:\SpringBoot-WorkSpace\ticket-tracker-app\src\main\java\com\glca\app\repo\ITicketRepo.java
+D:\SpringBoot-WorkSpace\ticket-tracker-app\src\main\java\com\glca\app\ServletInitializer.java
+D:\SpringBoot-WorkSpace\ticket-tracker-app\src\main\java\com\glca\app\service\TicketServiceImple.java

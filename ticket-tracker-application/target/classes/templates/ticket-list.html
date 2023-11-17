@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Ticket Tracker Application</title>
+	<style>
+		body {
+			background: #CBDCF7;
+			margin: 0;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+
+		<h2>Tickets</h2>
+		<hr>
+
+		<!-- Add a button -->
+		<a th:href="@{/createTicket}" class="btn btn-success btn-sm ml-3 mr-1">
+			New Ticket
+		</a>
+
+		<!-- Add a button -->
+		<a th:href="@{/Tickets}" class="btn btn-success btn-sm ml-3 mr-1">
+			Tickets
+		</a>
+
+
+		<!-- Search Bar -->
+		<form class="form-inline" th:action="@{/search}" method="get">
+			<div class="form-group">
+				<input type="text" class="form-control" name="name" placeholder="Search by Name">
+			</div>
+			<button type="submit" class="btn btn-primary">Search</button>
+		</form>
+
+		<table class="table table-bordered table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th>ID</th>
+					<th>Ticket Title</th>
+					<th>Short Description</th>
+					<th>Created On</th>
+
+
+
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="ticket : ${tickets}">
+
+					<td th:text="${ticket.id}" />
+					<td th:text="${ticket.title}" />
+					<td th:text="${ticket.ticketShortDescription}" />
+					<td th:text="${ticket.ticketCreatedOn}" />
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<a class="btn btn-primary" th:href="@{/}">Go back</a>
+
+	</div>
+</body>
+
+</html>

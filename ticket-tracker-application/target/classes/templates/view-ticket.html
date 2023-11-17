@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>View Ticket</title>
+	<style>
+		body {
+			background: #CBDCF7;
+			margin: 0;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<h1 class="text-center">View Ticket</h1>
+		<table class="table table-bordered table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th>ID</th>
+					<th>Ticket Title</th>
+					<th>Short Description</th>
+					<th>Created On</th>
+
+
+
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="ticket : ${tickets}">
+
+					<td th:text="${ticket.id}" />
+					<td th:text="${ticket.title}" />
+					<td th:text="${ticket.ticketShortDescription}" />
+					<td th:text="${ticket.ticketCreatedOn}" />
+
+					</td>
+
+
+				</tr>
+			</tbody>
+		</table>
+		<a class="btn btn-primary" th:href="@{/}">Go back</a>
+
+	</div>
+
+</body>
+
+</html>
